@@ -1,4 +1,3 @@
-
 class Node {
   constructor(value) {
   this.value = value
@@ -46,6 +45,27 @@ insert(value) {
  }
 }
 lookup(value) {
+  if(!this.root) {
+    return "no such value"
+  }
+  else {
+    let currentNode = this.root 
+    while(true) {
+       if (currentNode == null) {
+        return "not found"
+      }
+      else if (currentNode.value == value) {
+        return "found"
+      }
+      else if (currentNode == null) {
+        return "not found"
+      }
+      else if (value > currentNode.value) {
+        currentNode = currentNode.right
+      }
+      
+    }
+  }
 
 }
 }
@@ -58,4 +78,5 @@ binartree.insert(20)
 binartree.insert(170)
 binartree.insert(15)
 JSON.stringify(binartree.insert(1))
+binartree.lookup(170)
 
